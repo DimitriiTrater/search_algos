@@ -1,3 +1,4 @@
+/// working time complexity O(s.len)
 pub fn prefix_function(s: String) -> Vec<usize> {
     let mut p: Vec<usize> = Vec::new();
     p.resize(s.len(), 0);
@@ -15,6 +16,7 @@ pub fn prefix_function(s: String) -> Vec<usize> {
     p
 }
 
+/// working time complexity O(p.len + t.len)
 pub fn kmp(p: String, t: String) -> Vec<usize> {
     let pl = p.len();
     let tl = t.len();

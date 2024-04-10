@@ -1,40 +1,14 @@
-use crate::simple_find::{naive_string_matcher, Printer};
+use std::ptr::null;
+
+
+use crate::{knuth_morris_pratt::kmp, simple_find::{naive_string_matcher, Printer}};
 
 pub mod simple_find;
+pub mod knuth_morris_pratt;
+pub mod aho_corasik;
 
-//
-// enum VertexState {
-//     Link,
-//     Nil
-// }
-//
-// struct Vertex {
-//     from: Vec<Box<Vertex>>,
-//     state: VertexState
-// }
-//
-// impl Vertex {
-//     pub fn new() -> Self {
-//         Self { from: vec![], state: VertexState::Nil }
-//     }
-//
-//     pub fn from() {}
-//
-//     pub fn from_is_empty(&self) -> bool {
-//         self.from.is_empty()
-//     }
-//
-//     pub fn add(&mut self, input: Box<Vertex>) {
-//         self.from.push(input);
-//         self.state = VertexState::Link;
-//     }
-// }
-//
-// struct AhoCorasik {
-//
-// }
 
 fn main() {
-    let t = naive_string_matcher("new lol kek".to_string(), "lol k".to_string());
+    let t = kmp("k".to_string(), "lol kek lol kek lol kek".to_string());
     println!("{}", Printer(t));
 }

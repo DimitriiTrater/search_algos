@@ -18,13 +18,13 @@ pub fn naive_string_matcher(str: String, sub_str: String) -> Vec<i32> {
 }
 
 
-pub struct Printer(pub Vec<i32>);
+pub struct Printer<T>(pub Vec<T>);
 
-impl fmt::Display for Printer {
+impl<T: fmt::Display> fmt::Display for Printer<T> {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "Values:\n")?;
         for v in &self.0 {
-            write!(f, "\t{}", v)?;
+            write!(f, "{} ", v)?;
         }
         Ok(())
     }

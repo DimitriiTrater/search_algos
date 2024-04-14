@@ -2,7 +2,7 @@ use std::collections::HashMap;
 
 type Table = HashMap<char, i32>;
 
-fn get_true_len(s: String) -> usize {
+pub fn get_true_len(s: String) -> usize {
     let mut true_len = 0;
     for _ in s.chars() {
         true_len+=1;
